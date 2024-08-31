@@ -8,8 +8,6 @@ int lab1()
     return 0;
 }
 
-// 1.Write a C++ program to copy data of a 2D array in a 1D array using Column Major Order.
-
 int q1()
 {
     int const row = 3;
@@ -20,19 +18,20 @@ int q1()
         {7, 8, 9},
     };
     int one_dim_array[row * col];
-
+    int index = 0;
     for (int i = 0; i < row; i++)
     {
 
         for (int j = 0; j < col; j++)
         {
-            one_dim_array[j * row + i] = two_dim_array[i][j];
+            one_dim_array[index] = two_dim_array[j][i];
+            index++;
         }
     }
 
     for (int i = 0; i < row * col; i++)
     {
-        cout << one_dim_array[i];
+        cout << one_dim_array[i] << " ";
     }
     return 0;
 }
